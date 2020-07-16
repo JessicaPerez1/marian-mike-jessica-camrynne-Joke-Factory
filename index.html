@@ -4,27 +4,116 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>"INSIDE" JOKES</title>
+    <!-- FONT AWESOME LinK TO USE ICONS IN BULMA -->
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
+    ></script>
+    <!-- BULMA CDN LINK -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css"
+    />
   </head>
   <body>
     <!-- NAVIGATION BAR -->
-    <h1 id="brand">"Inside" Jokes</h1>
-    <img id="icon-fart" />
+    <!-- <h1 id="brand">"Inside" Jokes</h1> -->
+    <!-- <img id="icon-fart" /> -->
     <!-- Upper Right Display Current Date/Time -->
-    <span id="date-time">CURRENT DATE AND TIME</span>
+    <!-- <span id="date-time">CURRENT DATE AND TIME</span> -->
+
+    <section class="hero is-primary">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title" id="brand">
+            "Inside" Jokes
+          </h1>
+          <h2 class="subtitle" id="date-time">
+            current date and time
+          </h2>
+        </div>
+      </div>
+    </section>
 
     <!-- RANDOM JOKE (Jumbotron?) -->
-    <h2 id="random-title">Random jokes</h2>
-    <button id="btn-random-joke"></button>
+    <!-- <h2 id="random-title">Random jokes</h2>
+          <button id="btn-random-joke"></button> -->
+    <!-- OPTION 1 -->
+    <!-- <nav class="level">
+      <div class="level-item has-text-centered">
+        <div>
+          <p class="heading" id="random-title">Random joke</p>
+        </div>
+      </div>
+    </nav> -->
 
-    <!-- row 1: JOKE OF THE DAY + REGIONAL JOKE-->
-    <!-- col 1: Joke of the day -->
-    <h4 id="joke-day-title">Joke of the day</h4>
-    <button id="btn-joke-of-day"></button>
+    <div class="card">
+      <div class="card-content has-text-centered">
+        <div class="media-content">
+          <p class="title is-4" id="random-title">Random jokes</p>
+          <button class="button is-primary is-light is-medium">
+            Get a rando
+          </button>
+        </div>
+      </div>
+
+
+<!-- TILES MAIN -->
+<div class="tile is-ancestor">
+  <div class="tile is-vertical is-8">
+    <div class="tile is-parent">
+      <article class="tile is-child notification is-danger">
+        <p class="title">Joke of the day</p>
+        <p class="subtitle">Insert joke here</p>
+        <div class="content">
+          <!-- Content -->
+        </div>
+      </article>
+    </div>
+    <div class="tile">
+      <div class="tile is-parent is-vertical">
+        <article class="tile is-child notification is-primary">
+          <p class="title">Vertical...</p>
+          <p class="subtitle">Top tile</p>
+        </article>
+        <article class="tile is-child notification is-warning">
+          <p class="title">...tiles</p>
+          <p class="subtitle">Bottom tile</p>
+        </article>
+      </div>
+      <div class="tile is-parent">
+        <article class="tile is-child notification is-info">
+          <p class="title">Middle tile</p>
+          <p class="subtitle">With an image</p>
+          <figure class="image is-4by3">
+            <img src="https://bulma.io/images/placeholders/640x480.png">
+          </figure>
+        </article>
+      </div>
+    </div>
+  </div>
+  <div class="tile is-parent">
+    <article class="tile is-child notification is-success">
+      <div class="content">
+        <p class="title">Dad jokes</p>
+        <p class="subtitle">Insert joke here</p>
+          <figure class="image is-4by3">
+            <img src="https://d.facdn.net/art/overzen/1437630037/1437630037.overzen_dorky_dad_3.jpg">
+          </figure>
+      </div>
+    </article>
+  </div>
+</div>
+
+
+      <!-- row 1: JOKE OF THE DAY + REGIONAL JOKE-->
+      <!-- col 1: Joke of the day -->
+      <h4 id="joke-day-title">Joke of the day</h4>
     <p id="joke-day-display"></p>
-    <!-- col 2: Regional joke -->
-    <h4 id="current-city">You're in the city of:</h4>
-    <button id="btn-regional"></button>
-    <p id="joke-region-display"></p>
+      <!-- col 2: Regional joke -->
+      <h4 id="current-city">You're in the city of:</h4>
+      <button id="btn-regional"></button>
+      <p id="joke-region-display"></p>
 
     <!-- row 2: DAD JOKES + HAPPY HOUR + CHUCK NORRIS-->
     <!-- col 1: Dad jokes -->
