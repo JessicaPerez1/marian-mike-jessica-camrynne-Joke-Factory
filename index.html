@@ -4,49 +4,164 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>"INSIDE" JOKES</title>
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.min.js"
-      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <body>
-    <!-- Navigation Bar -->
-    <h1>"Inside" Jokes</h1>
-    <img id="icon-fart" />
-    <!-- Icon Row Regional Farts -->
-
-    <img id="icon-regional-fart-one" />
 
     <!-- Upper Right Display Current Date/Time -->
-    <span id="date-time"></span>
+    <!-- <span id="date-time">CURRENT DATE AND TIME</span> -->
 
-    <!-- Regional Joke Row (Jumbotron) -->
-    <h2 id="current-city">You're in the city of:</h2>
+    <section class="hero is-primary">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title" id="brand">"Inside" Jokes</h1>
+          <h2 class="subtitle" id="date-time">current date and time</h2>
+        </div>
+      </div>
+    </section>
 
-    <!-- Display Joke! -->
+    <div class="card">
+      <div class="card-content has-text-centered">
+        <div class="media-content">
+          <div class="field">
+            <div class="control">
+              <button id="btn-show-state" class="button is-primary is-light is-medium">Show my state</button>
+              <p id="state-display-question"></p>
+              <button
+                id="btn-state"
+                class="button is-primary is-light is-medium"
+              >Get your state joke</button>
+              <p id="state-display-answer"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <p class="regional-joke">Regional Joke Here</p>
-    <button id="regional">Click for city joke!</button>
-    <!-- Main Container Row-->
-    <!-- Two Columns -->
+    <!-- TILES MAIN -->
+    <div class="tile is-ancestor">
+      <div class="tile is-vertical is-8">
+        <div class="tile is-parent">
+          <article class="tile is-child notification is-danger">
+            <p id="joke-day-title" class="title">Joke of the day</p>
+            <button
+              id="btn-day-question"
+              class="button is-danger is-light is-small"
+            >
+              click to start
+            </button>
+            <p id="day-question" class="subtitle"></p>
+            <button
+              id="btn-day-answer"
+              class="button is-danger is-light is-small"
+            >
+              click for punchline
+            </button>
+            <p id="day-answer" class="subtitle"></p>
+          </article>
+        </div>
+        <div class="tile">
+          <div class="tile is-parent is-vertical">
+            <article class="tile is-child notification is-primary">
+              <p id="random-title" class="title">Random Jokes</p>
+              <p id="random-question" class="subtitle"></p>
+              <p id="random-answer" class="subtitle"></p>
+              <button
+                id="btn-random-question"
+                class="button is-primary is-light is-small"
+              >
+                click to start
+              </button>
+              <button
+                id="btn-random-answer"
+                class="button is-primary is-light is-small"
+              >
+                Need a punchline?
+              </button>
+            </article>
+            <article class="tile is-child notification is-warning">
+              <p id="chuck-norris-title" class="title">Chuck Norris</p>
+              <p id="chuck-norris-display" class="subtitle"></p>
+              <figure class="image is-4by5">
+                <img
+                  id="chuck-joke"
+                  src="https://fox17.com/resources/media/fcd7a380-eab6-4467-891e-be2ea75fe52b-large3x4_ChuckNorris.jpg?1560772299261"
+                />
+              </figure>
+            </article>
+          </div>
+          <div id="hh-container" class="tile is-parent">
+            <article class="tile is-child notification is-info">
+              <p id="happy-hour-title" class="title">Happy hour jokes</p>
+              <p id="hh-question" class="subtitle"></p>
+              <p id="hh-answer" class="subtitle"></p>
+              <!-- ADD CLICK EVENT ON IMAGE IN JS ===== MARIAN -->
+              <!-- <button
+                id="btn-happy-hour"
+                class="button is-info is-light is-small"
+              >
+                Get dirty
+              </button> -->
+              <figure class="image is-4by4">
+                <img
+                  id="btn-happy-hour"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSsxtc20qK72Vle4TsWY__y8KCyhhiTbI8iyA&usqp=CAU"
+                />
+              </figure>
+            </article>
+          </div>
+        </div>
+      </div>
+      <div class="tile is-parent">
+        <article class="tile is-child notification is-success">
+          <div class="content">
+            <p id="dad-joke-title" class="title">Dad jokes</p>
+            <p id="dad-joke-display" class="subtitle"></p>
+              <img id="btn-dad"
+                src="https://d.facdn.net/art/overzen/1437630037/1437630037.overzen_dorky_dad_3.jpg"
+              />
+            </figure>
+          </div>
+        </article>
+      </div>
+    </div>
 
-    <!-- DayTime Column 1 -->
-    <h3>Daytime Jokes</h3>
-    <p class="daytime-joke-display">Joke Appears Here</p>
-    <img id="gif-day" />
-    <!-- Dropdown Menu -->
 
-    <!-- NightTime Colum  2-->
-    <!-- Dropdown Menu -->
-    <h3>Nighttime Jokes</h3>
-    <p class="nighttime-joke-display">Joke Appears Here</p>
-    <img id="gif-night" />
+    <!-- FOOTER -->
+ 
 
-    <!-- Footer -->
-    <p class="footer">Master Web Developers Mike Marian Jessica Cam</p>
-    <!-- Fart Button -->
-    <button id="fart">Enjoy Your Day/Night!</button>
-    <script src="script.js"></script>
+    <!-- row 1: JOKE OF THE DAY + REGIONAL JOKE-->
+    <!-- col 1: Joke of the day -->
+    <!-- <h4 id="joke-day-title">Joke of the day</h4>
+    <p id="joke-day-display"></p> -->
+    <!-- col 2: Regional joke -->
+    <!-- <h4 id="current-city">You're in the city of:</h4>
+      <button id="btn-regional"></button>
+      <p id="joke-region-display"></p> -->
+
+
+    <!-- row 2: DAD JOKES + HAPPY HOUR + CHUCK NORRIS-->
+    <!-- col 1: Dad jokes -->
+    <h4 id="dad-joke-title">Dad jokes</h4>
+    <button id="btn-dad"></button>
+    <p id="dad-joke-display"></p>
+    <!-- col 2: Happy Hour jokes -->
+    <h4 id="happy-hour-title">Happy hour jokes</h4>
+    <button id="btn-happy-hour"></button>
+    <p id="happy-hour-display"></p>
+    <!-- col 3: Chuck Norris -->
+    <h4 id="chuck-norris-title">Chuck Norris jokes</h4>
+    <button id="chuck-joke"></button>
+    <p id="chuck-norris-display"></p>
+
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>
+          <strong>"Inside" Jokes</strong> by master Web Developers Mike Marian
+          Jessica Cam.
+        </p>
+        <p><a href="mailto:email@example.com">Send us a joke!</a></p>
+        <!-- Fart Button -->
+        <button id="fart">Enjoy Your Day/Night!</button>
+      </div>
+    </footer>
+
   </body>
 </html>
