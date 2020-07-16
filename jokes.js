@@ -458,7 +458,7 @@ stateJokeBtn.on("click", function () {
   }).then(function (response) {
     console.log(response);
     // State Name
-    var stateName = response.region_code;
+    var stateName = response.region_name;
     $("#state-display").text(stateName);
     console.log("State Name:", stateName);
     $("#btn-state").on(
@@ -466,8 +466,10 @@ stateJokeBtn.on("click", function () {
       function () {
         // var userState = $("#current-state").val();
         var stateLower = stateName.toLowerCase();
+        console.log(stateLower);
+        console.log(statesArray);
+        console.log(statesArray[12].state);
         for (var i = 0; i < statesArray.length; i++) {
-          console.log(stateLower);
           if (stateLower == statesArray[i].state) {
             var question = statesArray[i].question;
             var answer = statesArray[i].answer;
