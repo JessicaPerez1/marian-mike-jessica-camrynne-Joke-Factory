@@ -6,39 +6,43 @@
     <title>"INSIDE" JOKES</title>
   </head>
   <body>
-    <!-- Navigation Bar -->
-    <h1>"Inside" Jokes</h1>
+    <!-- NAVIGATION BAR -->
+    <h1 id="brand">"Inside" Jokes</h1>
     <img id="icon-fart" />
-    <!-- Icon Row Regional Farts -->
-    <img id="icon-regional-fart-one" />
-
     <!-- Upper Right Display Current Date/Time -->
-    <span id="date-time"></span>
+    <span id="date-time">CURRENT DATE AND TIME</span>
 
-    <!-- Regional Joke Row (Jumbotron) -->
-    <h2 id="current-city">You're in the city of:</h2>
+    <!-- RANDOM JOKE (Jumbotron?) -->
+    <h2 id="random-title">Random jokes</h2>
+    <button id="btn-random-joke"></button>
 
-    <!-- Display Joke! -->
+    <!-- row 1: JOKE OF THE DAY + REGIONAL JOKE-->
+    <!-- col 1: Joke of the day -->
+    <h4 id="joke-day-title">Joke of the day</h4>
+    <button id="btn-joke-of-day"></button>
+    <p id="joke-day-display"></p>
+    <!-- col 2: Regional joke -->
+    <h4 id="current-city">You're in the city of:</h4>
+    <button id="btn-regional"></button>
+    <p id="joke-region-display"></p>
 
-    <p class="regional-joke">Regional Joke Here</p>
+    <!-- row 2: DAD JOKES + HAPPY HOUR + CHUCK NORRIS-->
+    <!-- col 1: Dad jokes -->
+    <h4 id="dad-joke-title">Dad jokes</h4>
+    <button id="btn-dad"></button>
+    <p id="dad-joke-display"></p>
+    <!-- col 2: Happy Hour jokes -->
+    <h4 id="happy-hour-title">Happy hour jokes</h4>
+    <button id="btn-happy-hour"></button>
+    <p id="happy-hour-display"></p>
+    <!-- col 3: Chuck Norris -->
+    <h4 id="chuck-norris-title">Chuck Norris jokes</h4>
+    <button id="chuck-joke"></button>
+    <p id="chuck-norris-display"></p>
 
-    <!-- Main Container Row-->
-    <!-- Two Columns -->
-
-    <!-- DayTime Column 1 -->
-    <h3>Daytime Jokes</h3>
-    <p class="daytime-joke-display">Joke Appears Here</p>
-    <img id="gif-day" />
-    <!-- Dropdown Menu -->
-
-    <!-- NightTime Colum  2-->
-    <!-- Dropdown Menu -->
-    <h3>Nighttime Jokes</h3>
-    <p class="nighttime-joke-display">Joke Appears Here</p>
-    <img id="gif-night" />
-
-    <!-- Footer -->
+    <!-- FOOTER -->
     <p class="footer">Master Web Developers Mike Marian Jessica Cam</p>
+    <p><input type="text" class="email" />Email us a joke!</p>
     <!-- Fart Button -->
     <button id="fart">Enjoy Your Day/Night!</button>
   </body>
