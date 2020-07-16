@@ -11,15 +11,20 @@ function getLocation() {
   }
 }
 
-function showPosition(position) {
-  console.log(position);
-  regionalJokes.text(
-    "Latitude: " +
-      position.coords.latitude +
-      "<br>Longitude: " +
-      position.coords.longitude
-  );
-}
+var apiKey = "bbfa444193f64b9eb5224b986b66c7e3";
+
+var queryURL =
+  "https://api.opencagedata.com/geocode/v1/json?q=LAT+LNG&key=" + apiKey;
+// //
+// function showPosition(position) {
+//   console.log(position);
+//   regionalJokes.text(
+//     "Latitude: " +
+//       position.coords.latitude +
+//       "<br>Longitude: " +
+//       position.coords.longitude
+//   );
+// }
 
 getLocation();
 
