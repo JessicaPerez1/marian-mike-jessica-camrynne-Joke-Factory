@@ -4,10 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>"INSIDE" JOKES</title>
-
-    <!-- Upper Right Display Current Date/Time -->
-    <!-- <span id="date-time">CURRENT DATE AND TIME</span> -->
-
+    <!-- FONT AWESOME LinK TO USE ICONS IN BULMA -->
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
+    ></script>
+    <!-- BULMA CDN LINK -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="jokes.js"></script>
+  </head>
+  
+<body>
     <section class="hero is-primary">
       <div class="hero-body">
         <div class="container">
@@ -23,11 +35,13 @@
           <div class="field">
             <div class="control">
               <button id="btn-show-state" class="button is-primary is-light is-medium">Show my state</button>
-              <p id="state-display-question"></p>
+              <p id="state-display"></p>
+              
               <button
                 id="btn-state"
                 class="button is-primary is-light is-medium"
               >Get your state joke</button>
+              <p id="state-display-question"></p>
               <p id="state-display-answer"></p>
             </div>
           </div>
@@ -122,35 +136,7 @@
         </article>
       </div>
     </div>
-
-
     <!-- FOOTER -->
- 
-
-    <!-- row 1: JOKE OF THE DAY + REGIONAL JOKE-->
-    <!-- col 1: Joke of the day -->
-    <!-- <h4 id="joke-day-title">Joke of the day</h4>
-    <p id="joke-day-display"></p> -->
-    <!-- col 2: Regional joke -->
-    <!-- <h4 id="current-city">You're in the city of:</h4>
-      <button id="btn-regional"></button>
-      <p id="joke-region-display"></p> -->
-
-
-    <!-- row 2: DAD JOKES + HAPPY HOUR + CHUCK NORRIS-->
-    <!-- col 1: Dad jokes -->
-    <h4 id="dad-joke-title">Dad jokes</h4>
-    <button id="btn-dad"></button>
-    <p id="dad-joke-display"></p>
-    <!-- col 2: Happy Hour jokes -->
-    <h4 id="happy-hour-title">Happy hour jokes</h4>
-    <button id="btn-happy-hour"></button>
-    <p id="happy-hour-display"></p>
-    <!-- col 3: Chuck Norris -->
-    <h4 id="chuck-norris-title">Chuck Norris jokes</h4>
-    <button id="chuck-joke"></button>
-    <p id="chuck-norris-display"></p>
-
     <footer class="footer">
       <div class="content has-text-centered">
         <p>
@@ -162,6 +148,7 @@
         <button id="fart">Enjoy Your Day/Night!</button>
       </div>
     </footer>
-
+    
+    <script src="jokes.js"></script>
   </body>
 </html>
