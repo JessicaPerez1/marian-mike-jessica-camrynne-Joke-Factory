@@ -1,6 +1,6 @@
 var newQueryURL = "https://api.jokes.one/jod";
 
-$("#joke-of-the-day").on("click", function () {
+$("#btn-day-question").on("click", function () {
   $.ajax({
     url: newQueryURL,
     method: "GET",
@@ -8,9 +8,9 @@ $("#joke-of-the-day").on("click", function () {
     var randomJoke = response.contents.jokes[0].joke.text;
     var jokeQuestion = randomJoke.split("?")[0] + "?";
     var punchLine = randomJoke.split("?")[1];
-    $("#joke-question").text(jokeQuestion);
-    $("#answer").on("click", function () {
-      $("#joke-punchline").text(punchLine);
+    $("#day-question").text(jokeQuestion);
+    $("#btn-day-answer").on("click", function () {
+      $("#day-answer").text(punchLine);
     });
   });
 });
@@ -25,24 +25,24 @@ var settings = {
     "x-rapidapi-key": "1aa855e579msh3cc56d7cd98d205p163c23jsn746e5b8443b5",
   },
 };
-$("#random-joke-button").on("click", function () {
+$("#btn-random-question").on("click", function () {
   $.ajax(settings).done(function (response) {
-    $("#second-punchline-text").empty();
+    $("#random-answer").empty();
     var fullJoke = response.content;
     var newQuestion = response.content.split("?")[0] + "?";
     var newAnswer = response.content.split("?")[1];
     if (fullJoke.includes("?")) {
-      $("#random-joke-text").text(newQuestion);
-      $("#punchline-two").on("click", function () {
-        $("#second-punchline-text").text(newAnswer);
+      $("#random-question").text(newQuestion);
+      $("#btn-random-answer").on("click", function () {
+        $("#random-answer").text(newAnswer);
       });
     } else {
-      $("#random-joke-text").text(fullJoke);
+      $("#random-question").text(fullJoke);
     }
   });
 });
 
-$("#dad-outfit").on("click", function () {
+$("#btn-dad").on("click", function () {
   $.ajax({
     url: "https://icanhazdadjoke.com/",
     method: "GET",
@@ -67,12 +67,12 @@ var chuckSettings = {
   },
 };
 
-$("#chuck-image").on("click", function () {
+$("#chuck-joke").on("click", function () {
   $.ajax(chuckSettings).done(function (chuck) {
     // console.log(response);
     console.log(chuck.value);
     var chuckJoke = chuck.value;
-    $("#chuck-joke-display").text(chuckJoke);
+    $("#chuck-norris-display").text(chuckJoke);
   });
 });
 
@@ -444,23 +444,42 @@ var statesArray = [
   wyomingJoke,
 ];
 
-$("#state-click").on(
-  "click",
-  function () {
-    var userState = $("#state-input").val();
-    var userInput = userState.toLowerCase();
-    for (var i = 0; i < statesArray.length; i++) {
-      console.log(userInput);
-      if (userInput == statesArray[i].state) {
-        var question = statesArray[i].question;
-        var answer = statesArray[i].answer;
-        console.log(question);
-        console.log(answer);
-        $("#state-joke").text(question);
-        $("#state-punchline").text(answer);
-      }
-    }
-  }
+var stateJokeBtn = $("#btn-show-state");
+// When a user clicks a button
 
-  // console.log(userState);
-);
+var apiKey = "e4a497ac65d9804f1a154098c8025426";
+
+var queryURL = "http://api.ipstack.com/68.174.9.216?access_key=" + apiKey;
+
+stateJokeBtn.on("click", function () {
+  $.ajax({
+    url: queryURL,
+    method: "GET",
+  }).then(function (response) {
+    console.log(response);
+    // State Name
+    var stateName = response.region_code;
+    $("#state-display").text(stateName);
+    console.log("State Name:", stateName);
+    $("#btn-state").on(
+      "click",
+      function () {
+        // var userState = $("#current-state").val();
+        var stateLower = stateName.toLowerCase();
+        for (var i = 0; i < statesArray.length; i++) {
+          console.log(stateLower);
+          if (stateLower == statesArray[i].state) {
+            var question = statesArray[i].question;
+            var answer = statesArray[i].answer;
+            console.log(question);
+            console.log(answer);
+            $("#state-display-question").text(question);
+            $("#state-display-answer").text(answer);
+          }
+        }
+      }
+
+      // console.log(userState);
+    );
+  });
+});
