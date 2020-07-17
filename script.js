@@ -1,3 +1,6 @@
+// //navbar burger
+// var onclick = $(".burger").classList.toggle('is-active');
+
 // Geolocation
 
 var stateJokeBtn = $("#regional");
