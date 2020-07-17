@@ -16,31 +16,81 @@
     />
     <link rel="stylesheet" href="styles.css" />
     <script src="https://code.jquery.com/jquery.js"></script>
- 
   </head>
-  
-<body>
-    <section class="hero is-primary">
+
+  <body>
+    <!-- <section class="hero is-primary">
       <div class="hero-body">
         <div class="container">
           <h1 class="title" id="brand">"Inside" Jokes</h1>
           <h2 class="subtitle" id="date-time"></h2>
         </div>
       </div>
-    </section>
+    </section> -->
+    <nav class="navbar is-link" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <!-- ADD DEPLOYED APP URL IN HREF ===== TODO -->
+        <a class="title navbar-item m-auto mt-2" href="#">
+          <strong>"INSIDE" JOKES</strong>
+        </a>
 
+        <a
+          role="button"
+          class="navbar-burger burger"
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="navbarBasicExample"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="#joke-day-section">
+            Joke of the day
+          </a>
+
+          <a class="navbar-item" href="#random-section">
+            Random Jokes
+          </a>
+
+          <a class="navbar-item" href="#chuck-section">
+            Chuck Norris
+          </a>
+
+          <a class="navbar-item" href="#happy-hour-section">
+            Happy Hour jokes
+          </a>
+
+          <a class="navbar-item" href="#dad-section">
+            Dad jokes
+          </a>
+        </div>
+      </div>
+    </nav>
+    <!-- REGIONAL JOKE -->
     <div class="card">
       <div class="card-content has-text-centered">
         <div class="media-content">
           <div class="field">
             <div class="control">
-              <button id="btn-show-state" class="button is-primary is-light is-medium">Show my state</button>
+              <button
+                id="btn-show-state"
+                class="button is-primary is-light is-medium"
+              >
+                Show my state
+              </button>
               <p id="state-display"></p>
-              
+
               <button
                 id="btn-state"
                 class="button is-primary is-light is-medium"
-              >Get your state joke</button>
+              >
+                Get your state joke
+              </button>
               <p id="state-display-question"></p>
               <p id="state-display-answer"></p>
             </div>
@@ -53,7 +103,10 @@
     <div class="tile is-ancestor">
       <div class="tile is-vertical is-8">
         <div class="tile is-parent">
-          <article class="tile is-child notification is-danger">
+          <article
+            id="joke-day-section"
+            class="tile is-child notification is-danger"
+          >
             <p id="joke-day-title" class="title">Joke of the day</p>
             <button
               id="btn-day-question"
@@ -73,7 +126,10 @@
         </div>
         <div class="tile">
           <div class="tile is-parent is-vertical">
-            <article class="tile is-child notification is-primary">
+            <article
+              id="random-section"
+              class="tile is-child notification is-primary"
+            >
               <p id="random-title" class="title">Random Jokes</p>
               <p id="random-question" class="subtitle"></p>
               <p id="random-answer" class="subtitle"></p>
@@ -90,7 +146,10 @@
                 Need a punchline?
               </button>
             </article>
-            <article class="tile is-child notification is-warning">
+            <article
+              id="chuck-section"
+              class="tile is-child notification is-warning"
+            >
               <p id="chuck-norris-title" class="title">Chuck Norris</p>
               <p id="chuck-norris-display" class="subtitle"></p>
               <figure class="image is-4by5">
@@ -102,24 +161,19 @@
             </article>
           </div>
           <div id="hh-container" class="tile is-parent">
-            <article class="tile is-child notification is-info">
+            <article
+              id="happy-hour-section"
+              class="tile is-child notification is-info"
+            >
               <p id="happy-hour-title" class="title">Happy hour jokes</p>
               <div id="happy-hour-display-cont">
                 <p id="hh-question" class="subtitle"></p>
                 <p id="hh-answer" class="subtitle"></p>
               </div>
               <div id="not-happy-hour">
-                <p>It's not Happy Hour yet, come back in __ hours.</p> 
+                <p>It's not Happy Hour yet, come back in __ hours.</p>
               </div>
-              
-              <!-- ADD CLICK EVENT ON IMAGE IN JS ===== MARIAN -->
-              <!-- <button
-                id="btn-happy-hour"
-                class="button is-info is-light is-small"
-              >
-                Get dirty
-              </button> -->
-              <figure class="image is-4by4">
+              <figure class="image is-5by5 mt-4">
                 <img
                   id="btn-happy-hour"
                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSsxtc20qK72Vle4TsWY__y8KCyhhiTbI8iyA&usqp=CAU"
@@ -130,15 +184,17 @@
         </div>
       </div>
       <div class="tile is-parent">
-        <article class="tile is-child notification is-success">
+        <article id="dad-section" class="tile is-child notification is-success">
           <div class="content">
             <p id="dad-joke-title" class="title">Dad jokes</p>
             <p id="dad-joke-display" class="subtitle"></p>
-              <img id="btn-dad"
-                src="https://d.facdn.net/art/overzen/1437630037/1437630037.overzen_dorky_dad_3.jpg"
-              />
-            </figure>
           </div>
+          <figure class="image is-5by5 mt-4">
+            <img
+              id="btn-dad"
+              src="https://d.facdn.net/art/overzen/1437630037/1437630037.overzen_dorky_dad_3.jpg"
+            />
+          </figure>
         </article>
       </div>
     </div>
@@ -154,7 +210,7 @@
         <button id="fart">Enjoy Your Day/Night!</button>
       </div>
     </footer>
-    
+
     <script src="script.js"></script>
     <script src="jokes.js"></script>
   </body>
