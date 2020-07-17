@@ -1,3 +1,6 @@
+.title {
+  font-size: 20px;
+}
 #btn-show-state:hover,
 #btn-state:hover {
   background-color: black;
