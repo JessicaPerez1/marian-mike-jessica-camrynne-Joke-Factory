@@ -99,12 +99,15 @@ $("#btn-happy-hour").on("click", function () {
   $("#hh-question").html(randomQuestion.replace(/['"]+/g, ""));
   $("#hh-answer").html(randomAnswer.replace(/['"]+/g, ""));
 });
+$("#btn-not-happy-hour").on("click", function () {
+  $("#hh-not-yet").show();
+});
 
 // div for the hh container #hh-container
 //  when it is happy hour add a div to the page
 function hhJokeDisplay() {
   //  if 3pm-8pm display div
-  var startTime = moment().hour(14).valueOf();
+  var startTime = moment().hour(12).valueOf();
   console.log(startTime);
   var endTime = moment().hour(19).valueOf();
   console.log(typeof endTime);
@@ -112,11 +115,11 @@ function hhJokeDisplay() {
   if (todayNum < startTime) {
     $("#happy-hour-display-cont").hide();
     $("#not-happy-hour").show();
-    $("#btn-happy-hour").hide();
+    // $("#btn-happy-hour").hide();
+    // $("#btn-not-happy-hour").show();
   } else if (todayNum > endTime) {
     $("#happy-hour-display-cont").hide();
     $("#not-happy-hour").show();
-    $("#btn-happy-hour").hide();
   }
   //    On div have a button
   //    When button selected, display one joke from the array
@@ -124,7 +127,6 @@ function hhJokeDisplay() {
   else {
     $("#happy-hour-display-cont").show();
     $("#not-happy-hour").hide();
-    $("#btn-happy-hour").show();
   }
 }
 hhJokeDisplay();

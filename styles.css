@@ -1,6 +1,13 @@
 .title {
   font-size: 30px;
 }
+#btn-not-happy-hour,
+#btn-happy-hour,
+#btn-dad,
+#chuck-joke {
+  border-radius: 5px;
+}
+
 #btn-show-state:hover,
 #btn-state:hover {
   background-color: black;
@@ -26,4 +33,13 @@
 
 .image:hover {
   opacity: 0.5;
+}
+
+#hh-time {
+  font-size: 10px;
+  vertical-align: middle;
+}
+
+#hh-not-yet {
+  display: none;
 }
