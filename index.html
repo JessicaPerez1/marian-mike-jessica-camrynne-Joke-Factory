@@ -77,12 +77,16 @@
         <div class="media-content">
           <div class="field">
             <div class="control">
-              <button
-                id="btn-show-state"
-                class="button is-primary is-light is-medium"
-              >
-                Show my state
-              </button>
+              <h3>
+                INPUT WHICH STATE YOU LIVE IN (Please enter a valid U.S state):
+              </h3>
+              <input
+                id="state-input"
+                type="text"
+                placeholder="ex: New York"
+                onfocus="this.value=''"
+              />
+              <!-- <button id="btn-show-state" class="button is-primary is-light is-medium">Show my state</button> -->
               <p id="state-display"></p>
 
               <button

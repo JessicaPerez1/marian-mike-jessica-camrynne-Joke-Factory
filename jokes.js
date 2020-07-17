@@ -444,44 +444,43 @@ var statesArray = [
   wyomingJoke,
 ];
 
-var stateJokeBtn = $("#btn-show-state");
-// When a user clicks a button
+// var stateJokeBtn = $("#btn-show-state");
+// // When a user clicks a button
 
-var apiKey = "e4a497ac65d9804f1a154098c8025426";
+// var apiKey = "e4a497ac65d9804f1a154098c8025426";
 
-var queryURL = "http://api.ipstack.com/68.174.9.216?access_key=" + apiKey;
+// var queryURL = "http://api.ipstack.com/68.174.9.216?access_key=" + apiKey;
 
-stateJokeBtn.on("click", function () {
-  $.ajax({
-    url: queryURL,
-    method: "GET",
-  }).then(function (response) {
-    console.log(response);
-    // State Name
-    var stateName = response.region_name;
-    $("#state-display").text(stateName);
-    console.log("State Name:", stateName);
-    $("#btn-state").on(
-      "click",
-      function () {
-        // var userState = $("#current-state").val();
-        var stateLower = stateName.toLowerCase();
-        console.log(stateLower);
-        console.log(statesArray);
-        console.log(statesArray[12].state);
-        for (var i = 0; i < statesArray.length; i++) {
-          if (stateLower == statesArray[i].state) {
-            var question = statesArray[i].question;
-            var answer = statesArray[i].answer;
-            console.log(question);
-            console.log(answer);
-            $("#state-display-question").text(question);
-            $("#state-display-answer").text(answer);
-          }
-        }
+// stateJokeBtn.on("click", function () {
+//   $.ajax({
+//     url: queryURL,
+//     method: "GET",
+//   }).then(function (response) {
+//     console.log(response);
+//     // State Name
+//     var stateName = response.region_name;
+//     $("#state-display").text(stateName);
+//     console.log("State Name:", stateName);
+$("#btn-state").on(
+  "click",
+  function () {
+    var userState = $("#state-input").val();
+    var userInput = userState.toLowerCase();
+    // var stateLower = stateName.toLowerCase();
+    console.log(userState);
+    console.log(userInput);
+    console.log(statesArray[12].state);
+    for (var i = 0; i < statesArray.length; i++) {
+      if (userInput == statesArray[i].state) {
+        var question = statesArray[i].question;
+        var answer = statesArray[i].answer;
+        console.log(question);
+        console.log(answer);
+        $("#state-display-question").text("Question: " + question);
+        $("#state-display-answer").text("Answer: " + answer);
       }
+    }
+  }
 
-      // console.log(userState);
-    );
-  });
-});
+  // console.log(userState);
+);

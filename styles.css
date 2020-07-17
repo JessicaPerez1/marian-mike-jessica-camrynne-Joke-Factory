@@ -1,3 +1,29 @@
 .title {
   font-size: 20px;
 }
+#btn-show-state:hover,
+#btn-state:hover {
+  background-color: black;
+  font-weight: bold;
+  border: silver 2px dotted;
+}
+
+#btn-day-question:hover,
+#btn-day-answer:hover {
+  background-color: rebeccapurple;
+  font-weight: bold;
+  color: white;
+  border: lightpink 2px dotted;
+}
+
+#btn-random-question:hover,
+#btn-random-answer:hover {
+  background-color: darkslategrey;
+  font-weight: bold;
+  color: white;
+  border: mediumseagreen 2px dotted;
+}
+
+.image:hover {
+  opacity: 0.5;
+}
