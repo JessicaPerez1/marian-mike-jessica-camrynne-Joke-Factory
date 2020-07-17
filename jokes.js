@@ -1,6 +1,7 @@
 var newQueryURL = "https://api.jokes.one/jod";
 
 $("#btn-day-question").on("click", function () {
+  $("#btn-day-question").remove();
   $.ajax({
     url: newQueryURL,
     method: "GET",
@@ -8,10 +9,18 @@ $("#btn-day-question").on("click", function () {
     var randomJoke = response.contents.jokes[0].joke.text;
     var jokeQuestion = randomJoke.split("?")[0] + "?";
     var punchLine = randomJoke.split("?")[1];
-    $("#day-question").text(jokeQuestion);
-    $("#btn-day-answer").on("click", function () {
-      $("#day-answer").text(punchLine);
-    });
+    if (randomJoke.includes("?")) {
+      $("#day-question").text(jokeQuestion);
+      $("#btn-day-answer").on("click", function () {
+        $("#btn-day-answer").remove();
+        $("#day-answer").text(punchLine);
+      });
+    } else {
+      $("#day-question").text(randomJoke);
+      $("#btn-day-answer").on("click", function () {
+        $("#btn-day-answer").remove();
+      });
+    }
   });
 });
 
@@ -38,6 +47,9 @@ $("#btn-random-question").on("click", function () {
       });
     } else {
       $("#random-question").text(fullJoke);
+      $("#btn-random-answer").on("click", function () {
+        $("#random-answer").text("");
+      });
     }
   });
 });
