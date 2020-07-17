@@ -33,7 +33,7 @@
         <a class="title navbar-item m-auto mt-2" href="#">
           <strong>"INSIDE" JOKES</strong>
         </a>
-
+ <span class="nav-toggle"></span>
         <a
           role="button"
           class="navbar-burger burger"
@@ -45,6 +45,7 @@
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
         </a>
+        </span>
       </div>
 
       <div id="navbarBasicExample" class="navbar-menu">
@@ -78,12 +79,13 @@
           <div class="field">
             <div class="control">
               <h3>
-                INPUT WHICH STATE YOU LIVE IN (Please enter a valid U.S state):
+                INPUT WHICH STATE YOU LIVE IN:
               </h3>
               <input
                 id="state-input"
+                style="width: 250px;"
                 type="text"
-                placeholder="ex: New York"
+                placeholder="Enter a valid U.S state, ex: New York"
                 onfocus="this.value=''"
               />
               <!-- <button id="btn-show-state" class="button is-primary is-light is-medium">Show my state</button> -->
@@ -152,7 +154,7 @@
             </article>
             <article
               id="chuck-section"
-              class="tile is-child notification is-warning"
+              class="tile is-child notification is-info"
             >
               <p id="chuck-norris-title" class="title">Chuck Norris</p>
               <p id="chuck-norris-display" class="subtitle"></p>
@@ -167,11 +169,14 @@
           <div id="hh-container" class="tile is-parent">
             <article
               id="happy-hour-section"
-              class="tile is-child notification is-info"
+              class="tile is-child notification is-grey-dark"
             >
-              <p id="happy-hour-title" class="title">Happy hour jokes</p>
+              <p id="happy-hour-title" class="title mb-0">Happy hour jokes</p>
+              <p class="hh-time mt-1">
+                <em>available between 3pm and 8pm!</em>
+              </p>
               <div id="happy-hour-display-cont">
-                <p id="hh-question" class="subtitle"></p>
+                <p id="hh-question" class="subtitle mt-2"></p>
                 <p id="hh-answer" class="subtitle"></p>
               </div>
               <div id="not-happy-hour">
