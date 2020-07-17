@@ -16,7 +16,7 @@
     />
     <link rel="stylesheet" href="styles.css" />
     <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="jokes.js"></script>
+ 
   </head>
   
 <body>
@@ -24,7 +24,7 @@
       <div class="hero-body">
         <div class="container">
           <h1 class="title" id="brand">"Inside" Jokes</h1>
-          <h2 class="subtitle" id="date-time">current date and time</h2>
+          <h2 class="subtitle" id="date-time"></h2>
         </div>
       </div>
     </section>
@@ -104,8 +104,14 @@
           <div id="hh-container" class="tile is-parent">
             <article class="tile is-child notification is-info">
               <p id="happy-hour-title" class="title">Happy hour jokes</p>
-              <p id="hh-question" class="subtitle"></p>
-              <p id="hh-answer" class="subtitle"></p>
+              <div id="happy-hour-display-cont">
+                <p id="hh-question" class="subtitle"></p>
+                <p id="hh-answer" class="subtitle"></p>
+              </div>
+              <div id="not-happy-hour">
+                <p>It's not Happy Hour yet, come back in __ hours.</p> 
+              </div>
+              
               <!-- ADD CLICK EVENT ON IMAGE IN JS ===== MARIAN -->
               <!-- <button
                 id="btn-happy-hour"
@@ -149,6 +155,7 @@
       </div>
     </footer>
     
+    <script src="script.js"></script>
     <script src="jokes.js"></script>
   </body>
 </html>
