@@ -24,3 +24,7 @@ body {
   color: white;
   border: mediumseagreen 2px dotted;
 }
+
+.image:hover {
+  opacity: 0.5;
+}
