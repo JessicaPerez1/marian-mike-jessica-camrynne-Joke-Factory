@@ -102,7 +102,8 @@ function hhJokeDisplay() {
   console.log(startTime);
   var endTime = new Date().setHours(23);
   console.log(endTime);
-  if (today.getHours() < startTime && today.getHours() > endTime) {
+  console.log(today.getHours());
+  if (today.getHours() < startTime && endTime < today.getHours()) {
     $("#happy-hour-display-cont").hide();
     $("#not-happy-hour").show();
     $("#btn-happy-hour").hide();
