@@ -25,17 +25,13 @@ stateJokeBtn.on("click", function () {
 // Then a joke correlated to their location pops up
 var today = new Date();
 // Wed Jul 15 2020 18:44:34 GMT-0500 (Central Daylight Time)
-var time = today.getHours() + ":" + today.getMinutes();
-console.log(time);
-var date =
-  today.getMonth() +
-  "/" +
-  today.getDate() +
-  "/" +
-  today.getFullYear() +
-  "  " +
-  time;
-$("#date-time").text(date);
+var time = moment().format("h:mm a");
+var timestamp = moment();
+console.log(typeof time);
+console.log(timestamp);
+console.log(typeof timestamp);
+
+$("#date-time").text(time);
 var dirtyJoke = [
   {
     question: "What did Cinderella do when she arrived at the ball?",
@@ -97,13 +93,13 @@ $("#btn-happy-hour").on("click", function () {
 // div for the hh container #hh-container
 //  when it is happy hour add a div to the page
 function hhJokeDisplay() {
-  //  if 3pm-6pm display div
-  var startTime = new Date().setHours(15);
+  //  if 3pm-8pm display div
+  var startTime = moment().hour(15).valueOf();
   console.log(startTime);
-  var endTime = new Date().setHours(23);
-  console.log(endTime);
-  console.log(today.getHours());
-  if (today.getHours() < startTime && endTime < today.getHours()) {
+  var endTime = moment().hour(24).valueOf();
+  console.log(typeof endTime);
+
+  if (time < startTime) {
     $("#happy-hour-display-cont").hide();
     $("#not-happy-hour").show();
     $("#btn-happy-hour").hide();
