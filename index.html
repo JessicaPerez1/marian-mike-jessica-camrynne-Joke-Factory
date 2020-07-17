@@ -175,7 +175,8 @@
                 <p id="hh-answer" class="subtitle"></p>
               </div>
               <div id="not-happy-hour">
-                <p>It's not Happy Hour yet, come back in __ hours.</p>
+                <!-- TODO: add a countdown -->
+                <p>It's not Happy Hour yet, come back soon.</p>
               </div>
               <figure class="image is-5by5 mt-4">
                 <img
@@ -211,11 +212,14 @@
         </p>
         <p><a href="mailto:email@example.com">Send us a joke!</a></p>
         <!-- Fart Button -->
-        <button id="fart">Enjoy Your Day/Night!</button>
+
+        <audio id="common-fart-sound"></audio>
+        <button onclick="PlaySound()">Enjoy Your Day/Night!</button>
       </div>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="script.js"></script>
     <script src="jokes.js"></script>
+    <script src="sounds.js"></script>
   </body>
 </html>

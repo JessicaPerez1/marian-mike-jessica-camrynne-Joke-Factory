@@ -24,11 +24,21 @@ stateJokeBtn.on("click", function () {
 // else if the user does not have coordinates a different joke appears
 // Then a joke correlated to their location pops up
 var today = new Date();
+var todayNum = Number(today);
+
+console.log(todayNum);
+console.log(typeof todayNum);
 // Wed Jul 15 2020 18:44:34 GMT-0500 (Central Daylight Time)
 var time = moment().format("h:mm a");
+var times = new Date();
+
 var timestamp = moment();
+console.log("time: " + time);
+
 console.log(typeof time);
-console.log(timestamp);
+console.log("timestamp: " + timestamp);
+console.log("times: " + times);
+console.log(typeof times);
 console.log(typeof timestamp);
 
 $("#date-time").text(time);
@@ -94,12 +104,16 @@ $("#btn-happy-hour").on("click", function () {
 //  when it is happy hour add a div to the page
 function hhJokeDisplay() {
   //  if 3pm-8pm display div
-  var startTime = moment().hour(15).valueOf();
+  var startTime = moment().hour(14).valueOf();
   console.log(startTime);
-  var endTime = moment().hour(24).valueOf();
+  var endTime = moment().hour(19).valueOf();
   console.log(typeof endTime);
 
-  if (time < startTime) {
+  if (todayNum < startTime) {
+    $("#happy-hour-display-cont").hide();
+    $("#not-happy-hour").show();
+    $("#btn-happy-hour").hide();
+  } else if (todayNum > endTime) {
     $("#happy-hour-display-cont").hide();
     $("#not-happy-hour").show();
     $("#btn-happy-hour").hide();
