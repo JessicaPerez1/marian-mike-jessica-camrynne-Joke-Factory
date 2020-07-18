@@ -19,56 +19,31 @@
   </head>
 
   <body>
-    <!-- <section class="hero is-primary">
-      <div class="hero-body">
-        <div class="container">
-          <h1 class="title" id="brand">"Inside" Jokes</h1>
-          <h2 class="subtitle" id="date-time"></h2>
-        </div>
-      </div>
-    </section> -->
+    <!-- NAVBAR -->
     <nav class="navbar is-link" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand">
-        <!-- ADD DEPLOYED APP URL IN HREF ===== TODO -->
-        <a class="title navbar-item m-auto mt-2" href="#">
-          <strong>"INSIDE" JOKES</strong>
-        </a>
- <span class="nav-toggle"></span>
-        <a
-          role="button"
-          class="navbar-burger burger"
-          aria-label="menu"
-          aria-expanded="false"
-          data-target="navbarBasicExample"
-        >
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
-        </span>
-      </div>
-
-      <div id="navbarBasicExample" class="navbar-menu">
-        <div class="navbar-start">
-          <a class="navbar-item" href="#joke-day-section">
-            Joke of the day
+      <div class="container">
+        <div class="navbar-brand">
+          <!-- ADD DEPLOYED APP URL IN HREF ===== TODO -->
+          <a class="title navbar-item m-auto mt-2" href="#">
+            <strong>"INSIDE" JOKES</strong>
           </a>
-
-          <a class="navbar-item" href="#random-section">
-            Random Jokes
+          <a role="button" class="navbar-burger burger is-active" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
           </a>
+        </div>
 
-          <a class="navbar-item" href="#chuck-section">
-            Chuck Norris
-          </a>
-
-          <a class="navbar-item" href="#happy-hour-section">
-            Happy Hour jokes
-          </a>
-
-          <a class="navbar-item" href="#dad-section">
-            Dad jokes
-          </a>
+        <div id="navbar-menu-id" class="navbar-menu is-active">
+          <div class="navbar-start">
+            <a class="navbar-item" href="#joke-day-section">Joke of the day</a>
+            <a class="navbar-item" href="#random-section">Random Jokes</a>
+            <a class="navbar-item" href="#chuck-section">Chuck Norris</a>
+            <a class="navbar-item" href="#happy-hour-section"
+              >Happy Hour jokes</a
+            >
+            <a class="navbar-item" href="#dad-section">Dad jokes</a>
+          </div>
         </div>
       </div>
     </nav>
@@ -173,7 +148,7 @@
             >
               <p id="happy-hour-title" class="title mb-0">Happy hour jokes</p>
               <p class="hh-time mt-1">
-                <em>available between 3pm and 8pm!</em>
+              <p id="hh-notification"><em>available between 3pm and 8pm!</em></p>
               </p>
               <div id="happy-hour-display-cont">
                 <p id="hh-question" class="subtitle mt-2"></p>
