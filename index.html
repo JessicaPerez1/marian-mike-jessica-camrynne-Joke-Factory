@@ -27,7 +27,13 @@
           <a class="title navbar-item m-auto mt-2" href="#">
             <strong>"INSIDE" JOKES</strong>
           </a>
-          <a role="button" class="navbar-burger burger is-active" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <a
+            role="button"
+            class="navbar-burger burger is-active"
+            aria-label="menu"
+            aria-expanded="false"
+            data-target="navbarBasicExample"
+          >
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
@@ -136,7 +142,8 @@
               <figure class="image is-4by5">
                 <img
                   id="chuck-joke"
-                  src="https://fox17.com/resources/media/fcd7a380-eab6-4467-891e-be2ea75fe52b-large3x4_ChuckNorris.jpg?1560772299261" alt="chuck norris"
+                  src="https://fox17.com/resources/media/fcd7a380-eab6-4467-891e-be2ea75fe52b-large3x4_ChuckNorris.jpg?1560772299261"
+                  alt="chuck norris"
                 />
               </figure>
             </article>
@@ -146,9 +153,12 @@
               id="happy-hour-section"
               class="tile is-child notification is-grey-dark"
             >
-              <p id="happy-hour-title" class="title mb-0">Happy hour jokes</p>
+              <!-- updates to the hh section proposal -->
+              <p id="happy-hour-title" class="title mb-0">
+                Happy Hour Jokes <span id="hh-time">(from 3 to 8!)</span>
+              </p>
               <p class="hh-time mt-1">
-              <p id="hh-notification"><em>available between 3pm and 8pm!</em></p>
+                <!-- <p id="hh-notification"><em>available between 3pm and 8pm!</em></p> REMOVE -->
               </p>
               <div id="happy-hour-display-cont">
                 <p id="hh-question" class="subtitle mt-2"></p>
@@ -156,18 +166,25 @@
                 <figure class="image is-5by5 mt-4">
                   <img
                     id="btn-happy-hour"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSsxtc20qK72Vle4TsWY__y8KCyhhiTbI8iyA&usqp=CAU" alt="it's happy hour time"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSsxtc20qK72Vle4TsWY__y8KCyhhiTbI8iyA&usqp=CAU"
+                    alt="it's happy hour time"
                   />
                 </figure>
               </div>
               <div id="not-happy-hour">
                 <!-- TODO: add a countdown -->
                 <figure class="image is-5by5 mt-4">
-                <p id="hh-not-yet">It's not Happy Hour yet, come back soon.</p>
-                <img id="btn-not-happy-hour" src="https://66.media.tumblr.com/tumblr_m3oenfA9ct1qcb2bzo3_250.gifv" alt="it's almost happy hour"/>
-              </figure>
+                  <p id="hh-not-yet">
+                    It's not Happy Hour yet, come back soon
+                    <span id="hh-time-countdown"></span>.
+                  </p>
+                  <img
+                    id="btn-not-happy-hour"
+                    src="https://66.media.tumblr.com/tumblr_m3oenfA9ct1qcb2bzo3_250.gifv"
+                    alt="it's almost happy hour"
+                  />
+                </figure>
               </div>
-                
             </article>
           </div>
         </div>
@@ -181,7 +198,8 @@
           <figure class="image is-5by5 mt-4">
             <img
               id="btn-dad"
-              src="https://d.facdn.net/art/overzen/1437630037/1437630037.overzen_dorky_dad_3.jpg" alt="dad jokes icon"
+              src="https://d.facdn.net/art/overzen/1437630037/1437630037.overzen_dorky_dad_3.jpg"
+              alt="dad jokes icon"
             />
           </figure>
         </article>
