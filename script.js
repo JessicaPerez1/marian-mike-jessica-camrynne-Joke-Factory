@@ -30,28 +30,6 @@ stateJokeBtn.on("click", function () {
   });
 });
 
-// if the user is in this region, coordinates with joke appear
-// else if the user does not have coordinates a different joke appears
-// Then a joke correlated to their location pops up
-var today = new Date();
-var todayNum = Number(today);
-
-console.log(todayNum);
-console.log(typeof todayNum);
-// Wed Jul 15 2020 18:44:34 GMT-0500 (Central Daylight Time)
-var time = moment().format("h:mm a");
-var times = new Date();
-
-var timestamp = moment();
-console.log("time: " + time);
-
-console.log(typeof time);
-console.log("timestamp: " + timestamp);
-console.log("times: " + times);
-console.log(typeof times);
-console.log(typeof timestamp);
-
-$("#date-time").text(time);
 var dirtyJoke = [
   {
     question: "What did Cinderella do when she arrived at the ball?",
@@ -95,6 +73,23 @@ var dirtyJoke = [
   },
 ];
 
+// if the user is in this region, coordinates with joke appear
+// else if the user does not have coordinates a different joke appears
+// Then a joke correlated to their location pops up
+var today = new Date();
+var todayNum = Number(today);
+
+console.log(todayNum);
+console.log(typeof todayNum);
+// Wed Jul 15 2020 18:44:34 GMT-0500 (Central Daylight Time)
+var time = moment().format("h:mm a");
+var times = new Date();
+
+var timestamp = moment();
+console.log("time: " + time);
+
+$("#date-time").text(time);
+
 // for happy hour we will display a 'dirty' joke
 
 // during 3pm-6pm add a button to the page that displays a 'dirty' joke.
@@ -113,58 +108,47 @@ $("#btn-not-happy-hour").on("click", function () {
   $("#hh-not-yet").show();
 });
 
-// div for the hh container #hh-container
-//  when it is happy hour add a div to the page
-function hhJokeDisplay() {
-  //  if 3pm-8pm display div
-  var startTime = moment().hour(12).valueOf();
-  console.log(startTime);
-  var endTime = moment().hour(19).valueOf();
-  console.log(typeof endTime);
+function hhCountDown() {
+  var date = new Date(),
+    month = date.getMonth();
+  (day = date.getDate()),
+    (weekDay = date.getDay()),
+    (hours = {
+      start: new Date(date.getFullYear(), month, day),
+      end: new Date(date.getFullYear(), month, day),
+    });
+  // Time set for regular happy hour and reverse happy hour going through until midnight
+  hours.start.setHours(14);
+  hours.end.setHours(24);
 
-  if (todayNum < startTime) {
-    $("#happy-hour-display-cont").hide();
-    $("#not-happy-hour").show();
-    // $("#btn-happy-hour").hide();
-    // $("#btn-not-happy-hour").show();
-  } else if (todayNum > endTime) {
-    $("#happy-hour-display-cont").hide();
-    $("#not-happy-hour").show();
+  function countDown() {
+    var date = new Date(),
+      countHours = ("0" + (hours.start.getHours() - date.getHours())).substr(
+        -2
+      ),
+      countMinutes = ("0" + (59 - date.getMinutes())).substr(-2),
+      countSeconds = ("0" + (59 - date.getSeconds())).substr(-2);
+    //
+    // If it's currently not within the hours, don't show the different containers
+    if (
+      date.getHours() < hours.start.getHours() ||
+      date.getHours() > hours.end.getHours()
+    ) {
+      $("#happy-hour-display-cont").hide();
+      $("#not-happy-hour").show();
+    } else {
+      $("#happy-hour-display-cont").show();
+      $("#not-happy-hour").hide();
+    }
+    $(".hours").text(countHours);
+    $(".minutes").text(countMinutes);
+    $(".seconds").html(countSeconds);
   }
-  //    On div have a button
-  //    When button selected, display one joke from the array
-  //  else hide div
-  else {
-    $("#happy-hour-display-cont").show();
-    $("#not-happy-hour").hide();
-  }
+
+  $(function () {
+    setInterval(function () {
+      countDown();
+    }, 1000);
+  });
 }
-hhJokeDisplay();
-
-var countDownDate = new Date("15:00").getTime();
-console.log(countDownDate);
-
-// Update the count down every 1 second
-var x = setInterval(function () {
-  // Get today's date and time
-  var now = new Date().getTime();
-
-  // Find the distance between now and the count down date
-  var distance = countDownDate - now;
-
-  // Time calculations for days, hours, minutes and seconds
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-  // Output the result in an element with id="demo"
-  document.getElementById("hh-time-countdown").innerHTML =
-    days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-
-  // If the count down is over, write some text
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("demo").innerHTML = "EXPIRED";
-  }
-}, 1000);
+hhCountDown();

@@ -155,7 +155,9 @@
             >
               <!-- updates to the hh section proposal -->
               <p id="happy-hour-title" class="title mb-0">
-                Happy Hour Jokes <span id="hh-time">(from 3 to 8!)</span>
+                Happy Hour Jokes
+                <!-- <span class="hh-time">(from 3 to 8!)</span
+                ><span class="hh-time" id="date-time"></span> -->
               </p>
               <p class="hh-time mt-1">
                 <!-- <p id="hh-notification"><em>available between 3pm and 8pm!</em></p> REMOVE -->
@@ -175,9 +177,12 @@
                 <!-- TODO: add a countdown -->
                 <figure class="image is-5by5 mt-4">
                   <p id="hh-not-yet">
-                    It's not Happy Hour yet, come back soon
-                    <span id="hh-time-countdown"></span>.
+                    It's <span class="hh-time" id="date-time"></span>, not Happy
+                    Hour yet! Come back in <span class="hours"></span>h
+                    <span class="minutes"></span>m
+                    <span class="seconds"></span>s ...
                   </p>
+
                   <img
                     id="btn-not-happy-hour"
                     src="https://66.media.tumblr.com/tumblr_m3oenfA9ct1qcb2bzo3_250.gifv"
@@ -212,7 +217,12 @@
           <strong>"Inside" Jokes</strong> by master Web Developers Mike Marian
           Jessica Cam.
         </p>
-        <p><a href="mailto: 1jessicaperez@gmail.com; mkgude@gmail.com; michaeladam.haber@gmail.com; camrynne.sullivan@gmail.com">Send us a joke!</a></p>
+        <p>
+          <a
+            href="mailto: 1jessicaperez@gmail.com; mkgude@gmail.com; michaeladam.haber@gmail.com; camrynne.sullivan@gmail.com"
+            >Send us a joke!</a
+          >
+        </p>
         <!-- Fart Button -->
 
         <audio id="common-fart-sound"></audio>

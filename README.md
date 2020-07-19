@@ -6,7 +6,7 @@ Project Description: Build a web app that generates jokes based on user’s pref
 
 User Story: As a person living in this 2020 Covid era, who needs some humor, I want to have access to a bank of jokes so that I can cheer up my family/friends, dazzle my online dating matches, be popular in my place of work, and strengthen my washboard abs of comedy.
 
-![weather dashboard](p1-screenshot.png)
+![weather dashboard](assets/p1-screenshot.png)
 
 Functionality:
 
