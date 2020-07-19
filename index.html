@@ -19,55 +19,31 @@
   </head>
 
   <body>
-    <!-- <section class="hero is-primary">
-      <div class="hero-body">
-        <div class="container">
-          <h1 class="title" id="brand">"Inside" Jokes</h1>
-          <h2 class="subtitle" id="date-time"></h2>
-        </div>
-      </div>
-    </section> -->
+    <!-- NAVBAR -->
     <nav class="navbar is-link" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand">
-        <!-- ADD DEPLOYED APP URL IN HREF ===== TODO -->
-        <a class="title navbar-item m-auto mt-2" href="#">
-          <strong>"INSIDE" JOKES</strong>
-        </a>
-
-        <a
-          role="button"
-          class="navbar-burger burger"
-          aria-label="menu"
-          aria-expanded="false"
-          data-target="navbarBasicExample"
-        >
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
-      </div>
-
-      <div id="navbarBasicExample" class="navbar-menu">
-        <div class="navbar-start">
-          <a class="navbar-item" href="#joke-day-section">
-            Joke of the day
+      <div class="container">
+        <div class="navbar-brand">
+          <!-- ADD DEPLOYED APP URL IN HREF ===== TODO -->
+          <a class="title navbar-item m-auto mt-2" href="#">
+            <strong>"INSIDE" JOKES</strong>
           </a>
-
-          <a class="navbar-item" href="#random-section">
-            Random Jokes
+          <a role="button" class="navbar-burger burger is-active" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
           </a>
+        </div>
 
-          <a class="navbar-item" href="#chuck-section">
-            Chuck Norris
-          </a>
-
-          <a class="navbar-item" href="#happy-hour-section">
-            Happy Hour jokes
-          </a>
-
-          <a class="navbar-item" href="#dad-section">
-            Dad jokes
-          </a>
+        <div id="navbar-menu-id" class="navbar-menu is-active">
+          <div class="navbar-start">
+            <a class="navbar-item" href="#joke-day-section">Joke of the day</a>
+            <a class="navbar-item" href="#random-section">Random Jokes</a>
+            <a class="navbar-item" href="#chuck-section">Chuck Norris</a>
+            <a class="navbar-item" href="#happy-hour-section"
+              >Happy Hour jokes</a
+            >
+            <a class="navbar-item" href="#dad-section">Dad jokes</a>
+          </div>
         </div>
       </div>
     </nav>
@@ -78,12 +54,13 @@
           <div class="field">
             <div class="control">
               <h3>
-                INPUT WHICH STATE YOU LIVE IN (Please enter a valid U.S state):
+                INPUT WHICH STATE YOU LIVE IN:
               </h3>
               <input
                 id="state-input"
+                style="width: 250px;"
                 type="text"
-                placeholder="ex: New York"
+                placeholder="Enter a valid U.S state, ex: New York"
                 onfocus="this.value=''"
               />
               <!-- <button id="btn-show-state" class="button is-primary is-light is-medium">Show my state</button> -->
@@ -152,14 +129,14 @@
             </article>
             <article
               id="chuck-section"
-              class="tile is-child notification is-warning"
+              class="tile is-child notification is-info"
             >
-              <p id="chuck-norris-title" class="title">Chuck Norris</p>
+              <p id="chuck-norris-title" class="title">Chuck Norris Jokes</p>
               <p id="chuck-norris-display" class="subtitle"></p>
               <figure class="image is-4by5">
                 <img
                   id="chuck-joke"
-                  src="https://fox17.com/resources/media/fcd7a380-eab6-4467-891e-be2ea75fe52b-large3x4_ChuckNorris.jpg?1560772299261"
+                  src="https://fox17.com/resources/media/fcd7a380-eab6-4467-891e-be2ea75fe52b-large3x4_ChuckNorris.jpg?1560772299261" alt="chuck norris"
                 />
               </figure>
             </article>
@@ -167,22 +144,30 @@
           <div id="hh-container" class="tile is-parent">
             <article
               id="happy-hour-section"
-              class="tile is-child notification is-info"
+              class="tile is-child notification is-grey-dark"
             >
-              <p id="happy-hour-title" class="title">Happy hour jokes</p>
+              <p id="happy-hour-title" class="title mb-0">Happy hour jokes</p>
+              <p class="hh-time mt-1">
+              <p id="hh-notification"><em>available between 3pm and 8pm!</em></p>
+              </p>
               <div id="happy-hour-display-cont">
-                <p id="hh-question" class="subtitle"></p>
+                <p id="hh-question" class="subtitle mt-2"></p>
                 <p id="hh-answer" class="subtitle"></p>
+                <figure class="image is-5by5 mt-4">
+                  <img
+                    id="btn-happy-hour"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSsxtc20qK72Vle4TsWY__y8KCyhhiTbI8iyA&usqp=CAU" alt="it's happy hour time"
+                  />
+                </figure>
               </div>
               <div id="not-happy-hour">
-                <p>It's not Happy Hour yet, come back in __ hours.</p>
-              </div>
-              <figure class="image is-5by5 mt-4">
-                <img
-                  id="btn-happy-hour"
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSsxtc20qK72Vle4TsWY__y8KCyhhiTbI8iyA&usqp=CAU"
-                />
+                <!-- TODO: add a countdown -->
+                <figure class="image is-5by5 mt-4">
+                <p id="hh-not-yet">It's not Happy Hour yet, come back soon.</p>
+                <img id="btn-not-happy-hour" src="https://66.media.tumblr.com/tumblr_m3oenfA9ct1qcb2bzo3_250.gifv" alt="it's almost happy hour"/>
               </figure>
+              </div>
+                
             </article>
           </div>
         </div>
@@ -190,13 +175,13 @@
       <div class="tile is-parent">
         <article id="dad-section" class="tile is-child notification is-success">
           <div class="content">
-            <p id="dad-joke-title" class="title">Dad jokes</p>
+            <p id="dad-joke-title" class="title">Dad Jokes</p>
             <p id="dad-joke-display" class="subtitle"></p>
           </div>
           <figure class="image is-5by5 mt-4">
             <img
               id="btn-dad"
-              src="https://d.facdn.net/art/overzen/1437630037/1437630037.overzen_dorky_dad_3.jpg"
+              src="https://d.facdn.net/art/overzen/1437630037/1437630037.overzen_dorky_dad_3.jpg" alt="dad jokes icon"
             />
           </figure>
         </article>
@@ -236,7 +221,7 @@
         </button>
       </div>
     </footer>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="script.js"></script>
     <script src="jokes.js"></script>
     <script src="sounds.js"></script>
