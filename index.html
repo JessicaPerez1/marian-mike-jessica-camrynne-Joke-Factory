@@ -131,12 +131,12 @@
               id="chuck-section"
               class="tile is-child notification is-info"
             >
-              <p id="chuck-norris-title" class="title">Chuck Norris</p>
+              <p id="chuck-norris-title" class="title">Chuck Norris Jokes</p>
               <p id="chuck-norris-display" class="subtitle"></p>
               <figure class="image is-4by5">
                 <img
                   id="chuck-joke"
-                  src="https://fox17.com/resources/media/fcd7a380-eab6-4467-891e-be2ea75fe52b-large3x4_ChuckNorris.jpg?1560772299261"
+                  src="https://fox17.com/resources/media/fcd7a380-eab6-4467-891e-be2ea75fe52b-large3x4_ChuckNorris.jpg?1560772299261" alt="chuck norris"
                 />
               </figure>
             </article>
@@ -153,16 +153,21 @@
               <div id="happy-hour-display-cont">
                 <p id="hh-question" class="subtitle mt-2"></p>
                 <p id="hh-answer" class="subtitle"></p>
+                <figure class="image is-5by5 mt-4">
+                  <img
+                    id="btn-happy-hour"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSsxtc20qK72Vle4TsWY__y8KCyhhiTbI8iyA&usqp=CAU" alt="it's happy hour time"
+                  />
+                </figure>
               </div>
               <div id="not-happy-hour">
-                <p>It's not Happy Hour yet, come back in __ hours.</p>
-              </div>
-              <figure class="image is-5by5 mt-4">
-                <img
-                  id="btn-happy-hour"
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSsxtc20qK72Vle4TsWY__y8KCyhhiTbI8iyA&usqp=CAU"
-                />
+                <!-- TODO: add a countdown -->
+                <figure class="image is-5by5 mt-4">
+                <p id="hh-not-yet">It's not Happy Hour yet, come back soon.</p>
+                <img id="btn-not-happy-hour" src="https://66.media.tumblr.com/tumblr_m3oenfA9ct1qcb2bzo3_250.gifv" alt="it's almost happy hour"/>
               </figure>
+              </div>
+                
             </article>
           </div>
         </div>
@@ -170,13 +175,13 @@
       <div class="tile is-parent">
         <article id="dad-section" class="tile is-child notification is-success">
           <div class="content">
-            <p id="dad-joke-title" class="title">Dad jokes</p>
+            <p id="dad-joke-title" class="title">Dad Jokes</p>
             <p id="dad-joke-display" class="subtitle"></p>
           </div>
           <figure class="image is-5by5 mt-4">
             <img
               id="btn-dad"
-              src="https://d.facdn.net/art/overzen/1437630037/1437630037.overzen_dorky_dad_3.jpg"
+              src="https://d.facdn.net/art/overzen/1437630037/1437630037.overzen_dorky_dad_3.jpg" alt="dad jokes icon"
             />
           </figure>
         </article>
@@ -202,7 +207,7 @@
         <button onclick="PlayLMFartSound()">Lawn Mower Fart</button>
       </div>
     </footer>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="script.js"></script>
     <script src="jokes.js"></script>
     <script src="sounds.js"></script>
