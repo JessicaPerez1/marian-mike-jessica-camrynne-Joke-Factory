@@ -79,20 +79,16 @@ var dirtyJoke = [
 var today = new Date();
 var todayNum = Number(today);
 
-console.log(todayNum);
-console.log(typeof todayNum);
-// Wed Jul 15 2020 18:44:34 GMT-0500 (Central Daylight Time)
 var time = moment().format("h:mm a");
 var times = new Date();
 
 var timestamp = moment();
-console.log("time: " + time);
 
 $("#date-time").text(time);
 
 // for happy hour we will display a 'dirty' joke
 
-// during 3pm-6pm add a button to the page that displays a 'dirty' joke.
+// add a button to the page that displays a 'dirty' joke.
 
 $("#btn-happy-hour").on("click", function () {
   var randomDirtyJoke = dirtyJoke[Math.floor(Math.random() * dirtyJoke.length)];
@@ -118,7 +114,7 @@ function hhCountDown() {
       end: new Date(date.getFullYear(), month, day),
     });
   // Time set for regular happy hour and reverse happy hour going through until midnight
-  hours.start.setHours(14);
+  hours.start.setHours(15);
   hours.end.setHours(24);
 
   function countDown() {
@@ -128,7 +124,7 @@ function hhCountDown() {
       ),
       countMinutes = ("0" + (59 - date.getMinutes())).substr(-2),
       countSeconds = ("0" + (59 - date.getSeconds())).substr(-2);
-    //
+
     // If it's currently not within the hours, don't show the different containers
     if (
       date.getHours() < hours.start.getHours() ||
